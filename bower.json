@@ -1,0 +1,12 @@
+{
+  "name": "BB062015",
+  "version": "0.1.0",
+  "description": "A starter project for AngularJS",
+  "homepage": "https://github.com/RecuencoJones/BB062015",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-ui-router": "~0.2.15"
+  }
+}
