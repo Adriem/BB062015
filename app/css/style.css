@@ -21,6 +21,11 @@ body,
     left: 0px !important;
 }
 
+.view-not-active {
+    position: absolute;
+    left: 100px !important;
+}
+
 .sidebar {
     z-index: 9000;
     position: absolute;
@@ -60,9 +65,20 @@ body,
     cursor: pointer;
 }
 
+.active-page,
+.active-page:hover {
+    background-color: #d5d5d5;
+    color: #222;
+}
+
 .betabeers-icon {
     font-weight: bold;
     font-size: 20px;
+}
+
+.icon {
+    font-weight: bold;
+    font-size: 15.5px;
 }
 
 .floating-menu-handler {
@@ -113,6 +129,7 @@ body,
 
 .container {
     padding-top: 75px;
+    width: 80%;
 }
 
 /**

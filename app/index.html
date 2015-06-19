@@ -9,7 +9,6 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
@@ -18,7 +17,7 @@
     <div class="sidebar-wrapper">
         <div class="sidebar">
             <div class="sidebar-content">
-                <div class="sidebar-header" id="home-handler">
+                <div class="sidebar-header active-page" id="home-handler">
                     <p class="pull-left betabeers-icon">ßeers</p>
                     <span class="pull-right betabeers-icon">ß</span>
                 </div>
@@ -64,81 +63,8 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-
-        var beerList = [
-            {
-                name: "Ambar",
-                vol: "4,5%"
-            },
-            {
-                name: "Gulden Draak",
-                vol: "10,5%"
-            },
-            {
-                name: "Spitfire",
-                vol: "11%"
-            }
-        ];
-
-        function setList(list){
-            var listFrame = $('#list');
-            listFrame.empty();
-            list.forEach(function(item){
-                listFrame.append(
-                    "<div class='list-group-item'>"+
-                    "<h3>"+item.name+"</h3>"+
-                    "</div>"
-                );
-            });
-        }
-//        setList(beerList);
-
-        function filterAndSetElements(){
-            var filterValue = $('#filter').val();
-            var filteredList = beerList.filter(function(item){
-                return item.name.toLowerCase().indexOf(filterValue.toLowerCase())>-1;
-            });
-            setList(filteredList);
-        }
-
-        var request = $.ajax({
-            url: "thisUrl",
-            method: "GET"
-        });
-
-        request.done(function(msg){
-            beerList = JSON.parse(msg);
-            setList(beerList);
-        });
-
-        request.fail(function(){
-            setList(beerList);
-        });
-
-        $('#home-handler').click(function() {
-            window.location.replace('index.html');
-        });
-
-        $('#menu-handler').click(function() {
-            $('.sidebar').toggleClass('sidebar-active',1000,"swing");
-        });
-
-        $('#create-handler').click(function () {
-            window.location.href= 'create.html';
-        });
-
-        $('#about-handler').click(function () {
-            window.location.href= 'about.html';
-        });
-
-        $('#code-handler').click(function () {
-            window.location.href = "http://github.com/RecuencoJones/BB062015";
-        });
-
-        $('#filter-form').keyup(filterAndSetElements);
-
-    </script>
+    <script type="text/javascript" src="js/commonHandlers.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 
 </body>
 </html>

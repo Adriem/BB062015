@@ -9,7 +9,6 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
@@ -26,7 +25,7 @@
                 <p class="pull-left">Create</p>
                 <span class="pull-right glyphicon glyphicon-plus-sign"></span>
             </div>
-            <div class="sidebar-option" id="about-handler">
+            <div class="sidebar-option active-page" id="about-handler">
                 <p class="pull-left">About</p>
                 <span class="pull-right glyphicon glyphicon-info-sign"></span>
             </div>
@@ -49,8 +48,27 @@
                         <div class="header">
                             <h1>About this project</h1>
                         </div>
-                        <div id="list-filter">
-                            <p>My long text is poop</p>
+                        <div style="text-align: center">
+                            <h3>Motivation</h3>
+                            <p>This project attempts to show the benefits from using a framework like AngularJS, particularly
+                            focusing in the use of: Router, directives for HTML injection, services and providers with dependency
+                            injection on controllers, MVVM aka two-way-binding and refactoring code into
+                            independent components.</p>
+                            <h3>Reasons</h3>
+                            <dt>Router:</dt>
+                            <dd>Why depending directly on HTML files when you can resolve URIs assigned to HTML templates
+                            and JS controllers?</dd>
+                            <dt>HTML directives:</dt>
+                            <dd>Why repeating code so many times in each view if you can just write it once and import
+                            it with an HTML tag?</dd>
+                            <dt>Services/Providers:</dt>
+                            <dd>Why having your view-model sharing the same space as your business logic?</dd>
+                            <dt>MVVM:</dt>
+                            <dd>Why using jQuery to get user input and show outputs when you can easily use Angular's
+                            $scope model magic and keep the code readable, maintainable and extensible?</dd>
+                            <dt>Refactor:</dt>
+                            <dd>Why having large JS files with a full page's functionality when you can have it split
+                            into simple self-sufficient components?</dd>
                         </div>
                     </div>
                 </div>
@@ -59,29 +77,7 @@
     </div>
 </div>
 
-<script type="text/javascript">
-
-    $('#home-handler').click(function() {
-        window.location.replace('index.html');
-    });
-
-    $('#menu-handler').click(function() {
-        $('.sidebar').toggleClass('sidebar-active',1000,"swing");
-    });
-
-    $('#create-handler').click(function () {
-        window.location.href= 'create.html';
-    });
-
-    $('#about-handler').click(function () {
-        window.location.href= 'about.html';
-    });
-
-    $('#code-handler').click(function () {
-        window.location.href = "http://github.com/RecuencoJones/BB062015";
-    });
-
-</script>
+<script type="text/javascript" src="js/commonHandlers.js"></script>
 
 </body>
 </html>
