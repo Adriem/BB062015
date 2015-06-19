@@ -15,13 +15,130 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="jumbotron">
-            <h1 class="page-header">
-                Hello world!
-            </h1>
+    <div class="sidebar-wrapper">
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header" id="home-handler">
+                    <p class="pull-left betabeers-icon">ßeers</p>
+                    <span class="pull-right betabeers-icon">ß</span>
+                </div>
+                <div class="sidebar-option" id="create-handler">
+                    <p class="pull-left">Create</p>
+                    <span class="pull-right glyphicon glyphicon-plus-sign"></span>
+                </div>
+                <div class="sidebar-option" id="about-handler">
+                    <p class="pull-left">About</p>
+                    <span class="pull-right glyphicon glyphicon-info-sign"></span>
+                </div>
+                <div class="sidebar-option" id="code-handler">
+                    <p class="pull-left">Code</p>
+                    <i class="pull-right glyphicon glyphicon-random"></i>
+                </div>
+            </div>
+            <div class="floating-menu-handler">
+                <div id="menu-handler">
+                    <span class="glyphicon glyphicon-option-vertical"></span>
+                </div>
+            </div>
+        </div>
+        <div class="view">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="jumbotron">
+                            <div class="header">
+                                <h1>List of Beers</h1>
+                            </div>
+                            <form class="form-horizontal" id="filter-form">
+                                <div class="input-group-lg">
+                                    <input class="form-control" type="text" placeholder="Filtro" id="filter">
+                                </div>
+                            </form>
+
+                            <div class="list-group" id="list">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+
+        var beerList = [
+            {
+                name: "Ambar",
+                vol: "4,5%"
+            },
+            {
+                name: "Gulden Draak",
+                vol: "10,5%"
+            },
+            {
+                name: "Spitfire",
+                vol: "11%"
+            }
+        ];
+
+        function setList(list){
+            var listFrame = $('#list');
+            listFrame.empty();
+            list.forEach(function(item){
+                listFrame.append(
+                    "<div class='list-group-item'>"+
+                    "<h3>"+item.name+"</h3>"+
+                    "</div>"
+                );
+            });
+        }
+//        setList(beerList);
+
+        function filterAndSetElements(){
+            var filterValue = $('#filter').val();
+            var filteredList = beerList.filter(function(item){
+                return item.name.toLowerCase().indexOf(filterValue.toLowerCase())>-1;
+            });
+            setList(filteredList);
+        }
+
+        var request = $.ajax({
+            url: "thisUrl",
+            method: "GET"
+        });
+
+        request.done(function(msg){
+            beerList = JSON.parse(msg);
+            setList(beerList);
+        });
+
+        request.fail(function(){
+            setList(beerList);
+        });
+
+        $('#home-handler').click(function() {
+            window.location.replace('index.html');
+        });
+
+        $('#menu-handler').click(function() {
+            $('.sidebar').toggleClass('sidebar-active',1000,"swing");
+        });
+
+        $('#create-handler').click(function () {
+            window.location.href= 'create.html';
+        });
+
+        $('#about-handler').click(function () {
+            window.location.href= 'about.html';
+        });
+
+        $('#code-handler').click(function () {
+            window.location.href = "http://github.com/RecuencoJones/BB062015";
+        });
+
+        $('#filter-form').keyup(filterAndSetElements);
+
+    </script>
 
 </body>
 </html>

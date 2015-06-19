@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BB062015</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="sidebar-wrapper">
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-header" id="home-handler">
+                <p class="pull-left betabeers-icon">ßeers</p>
+                <span class="pull-right betabeers-icon">ß</span>
+            </div>
+            <div class="sidebar-option" id="create-handler">
+                <p class="pull-left">Create</p>
+                <span class="pull-right glyphicon glyphicon-plus-sign"></span>
+            </div>
+            <div class="sidebar-option" id="about-handler">
+                <p class="pull-left">About</p>
+                <span class="pull-right glyphicon glyphicon-info-sign"></span>
+            </div>
+            <div class="sidebar-option" id="code-handler">
+                <p class="pull-left">Code</p>
+                <i class="pull-right glyphicon glyphicon-random"></i>
+            </div>
+        </div>
+        <div class="floating-menu-handler">
+            <div id="menu-handler">
+                <span class="glyphicon glyphicon-option-vertical"></span>
+            </div>
+        </div>
+    </div>
+    <div class="view">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <div class="header">
+                            <h1>Submit new beer</h1>
+                        </div>
+                        <div id="list-filter">
+                            <form class="form-horizontal" id="filter-form">
+                                <div class="input-group-lg">
+                                    <input class="form-control" type="text" placeholder="Nofiltro" id="nofilter">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $('#home-handler').click(function() {
+        window.location.replace('index.html');
+    });
+
+    $('#menu-handler').click(function() {
+        $('.sidebar').toggleClass('sidebar-active',1000,"swing");
+    });
+
+    $('#create-handler').click(function () {
+        window.location.href= 'create.html';
+    });
+
+    $('#about-handler').click(function () {
+        window.location.href= 'about.html';
+    });
+
+    $('#code-handler').click(function () {
+        window.location.href = "http://github.com/RecuencoJones/BB062015";
+    });
+
+</script>
+
+</body>
+</html>
