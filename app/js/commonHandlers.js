@@ -2,7 +2,7 @@
  * Created by david on 19/06/2015.
  */
 $('#home-handler').click(function() {
-    window.location.replace('index.html');
+    window.location.href= 'index.html';
 });
 
 $('#menu-handler').click(function() {

@@ -8,7 +8,7 @@ function setList(list) {
             "<div class='list-group-item'>" +
             "<div class='row'>" +
             "<div class='col-md-2'>" +
-            "<img class='beer-image' src=" + item.img + " alt='Beer image'>" +
+            "<img class='beer-image' width='100px' src=" + item.img + " alt='Beer image'>" +
             "</div>" +
             "<div class='col-md-8'>" +
             "<h3>" + item.name + "</h3>" +
