@@ -1,0 +1,25 @@
+<div class="sidebar" ng-controller="NavbarCtrl">
+    <div class="sidebar-content">
+        <div class="sidebar-header" ng-class="{'active-page': isActive('/home')}" id="home-handler">
+            <p class="pull-left betabeers-icon">ßeers</p>
+            <span class="pull-right betabeers-icon">ß</span>
+        </div>
+        <div class="sidebar-option" ng-class="{'active-page': isActive('/create')}" id="create-handler">
+            <p class="pull-left">Create</p>
+            <span class="pull-right glyphicon glyphicon-plus-sign"></span>
+        </div>
+        <div class="sidebar-option" ng-class="{'active-page': isActive('/about')}" id="about-handler">
+            <p class="pull-left">About</p>
+            <span class="pull-right glyphicon glyphicon-info-sign"></span>
+        </div>
+        <div class="sidebar-option" id="code-handler">
+            <p class="pull-left">Code</p>
+            <i class="pull-right glyphicon glyphicon-random"></i>
+        </div>
+    </div>
+    <div class="floating-menu-handler">
+        <div id="menu-handler" ng-click="toggleSidebar()">
+            <span class="glyphicon glyphicon-option-vertical"></span>
+        </div>
+    </div>
+</div>
