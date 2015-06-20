@@ -1,0 +1,37 @@
+<div class="view">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <div class="header">
+                        <h1>List of Beers</h1>
+                    </div>
+                    <form class="form-horizontal" id="filter-form">
+                        <div class="input-group-lg">
+                            <input class="form-control" type="text" placeholder="Filter" ng-model="filter.name" id="filter">
+                        </div>
+                    </form>
+
+                    <div class="list-group" id="list">
+                        <div class="list-group-item" ng-repeat="beer in beerList | filter:filter">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img class='beer-image' width='100px' ng-src="{{beer.img}}" alt='Beer image'>
+                                </div>
+                                <div class="col-md-8">
+                                    <h3> {{beer.name}} </h3>
+                                    <p> {{beer.details}} </p>
+                                </div>
+                                <div class="col-md-2">
+                                    <em class="pull-right">
+                                        {{beer.vol}} %
+                                    </em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,8 @@
-app.controller('MainCtrl', function ($scope, $http) {
+app.controller('MainCtrl', function ($scope, BeerService) {
 
     $scope.beerList = [];
 
-    $http.get("./data/beers.json")
+    BeerService.load()
         .success(function (data) {
             $scope.beerList = data.data;
         })

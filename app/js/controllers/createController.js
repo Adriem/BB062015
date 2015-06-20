@@ -1,4 +1,4 @@
-app.controller('CreateCtrl',function($scope,$http){
+app.controller('CreateCtrl',function($scope,$state,BeerService){
 
     $scope.beer = {};
 
@@ -27,12 +27,12 @@ app.controller('CreateCtrl',function($scope,$http){
         }
         console.log($scope.beer);
 
-        $http.post("http://localhost:8080/beers/api/submit", JSON.stringify(beer))
-            .success(function(){
+        BeerService.submit($scope.beer)
+            .success(function () {
                 alert("Beer successfully added!");
-                window.location.href= 'index.html';
+                $state.go('home');
             })
-            .fail(function(){
+            .error(function () {
                 alert("Error submitting beer");
             });
     }
