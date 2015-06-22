@@ -71,6 +71,16 @@ body,
     color: #222;
 }
 
+sidebar {
+    position: fixed;
+    z-index: 9000;
+    height: 100%;
+}
+
+ui-view {
+    width: 100%;
+}
+
 .betabeers-icon {
     font-weight: bold;
     font-size: 20px;
