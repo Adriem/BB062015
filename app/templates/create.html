@@ -1,0 +1,48 @@
+<div class="view">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <div class="header">
+                        <h1>Submit new beer</h1>
+                    </div>
+                    <div>
+                        <form class="form-horizontal" id="create-form" ng-submit="send()">
+                            <div class="input-group" ng-class="{'has-error' : errors.name}">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-font"></span>
+                                </div>
+                                <input class="form-control" type="text" placeholder="Name" ng-model="beer.name">
+                            </div>
+                            <div class="input-group" ng-class="{'has-error' : errors.details}">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                </div>
+                                <input class="form-control" type="text" placeholder="Details" ng-model="beer.details">
+                            </div>
+                            <div class="input-group" ng-class="{'has-error' : errors.img}">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-picture"></span>
+                                </div>
+                                <input class="form-control" type="url" placeholder="Image" ng-model="beer.img">
+                            </div>
+                            <div class="input-group" ng-class="{'has-error' : errors.provenance}">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-globe"></span>
+                                </div>
+                                <input class="form-control" type="text" placeholder="Provenance" ng-model="beer.provenance">
+                            </div>
+                            <div class="input-group" ng-class="{'has-error' : errors.vol}">
+                                <div class="input-group-addon">
+                                    <span class="icon">%</span>
+                                </div>
+                                <input class="form-control" type="number" placeholder="Volume (%)" ng-model="beer.vol" step="0.1">
+                            </div>
+                            <button class="btn btn-primary btn-block" type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
