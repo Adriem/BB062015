@@ -1,0 +1,165 @@
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #CC3300;
+}
+
+html,
+body,
+.sidebar-wrapper,
+.sidebar,
+.view {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+}
+
+.sidebar-active {
+    position: absolute;
+    left: 0px !important;
+}
+
+.view-not-active {
+    position: absolute;
+    left: 100px !important;
+}
+
+.sidebar {
+    z-index: 9000;
+    position: absolute;
+    left: -100px;
+    width: 165px;
+}
+
+.sidebar-content {
+    position: relative;
+    width: 100%;
+    display: block;
+    background-color: #333;
+}
+
+.sidebar-option,
+.sidebar-header {
+    background-color: #222;
+    color: #d5d5d5;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.sidebar-header {
+    padding: 25px 20px 25px 20px;
+    height: 75px;
+}
+
+.sidebar-option {
+    padding: 15px 20px 15px 20px;
+    height: 50px;
+}
+
+.sidebar-option:hover,
+.sidebar-header:hover,
+#menu-handler:hover {
+    background-color: #404040;
+    cursor: pointer;
+}
+
+.active-page,
+.active-page:hover {
+    background-color: #d5d5d5;
+    color: #222;
+}
+
+sidebar {
+    position: fixed;
+    z-index: 9000;
+    height: 100%;
+}
+
+ui-view {
+    width: 100%;
+}
+
+.betabeers-icon {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.icon {
+    font-weight: bold;
+    font-size: 15.5px;
+}
+
+.floating-menu-handler {
+    /*margin-top: 25px;*/
+    height: 100%;
+}
+
+#menu-handler {
+    background-color: #222;
+    color: #d5d5d5;
+    font-weight: bold;
+    width: 15px;
+    height: 30px;
+    padding: 5px 1px;
+    border: 1px solid black;
+    border-left: none;
+    /*border-top-right-radius: 5px;*/
+    border-bottom-right-radius: 5px;
+}
+
+.view {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.header {
+    text-align: center;
+}
+
+/**
+ * Bootstrap mods
+ */
+.navbar {
+    height: 50px;
+}
+
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar-brand {
+    float: none;
+}
+
+.container {
+    padding-top: 75px;
+    width: 80%;
+}
+
+/**
+ * Scrollbar
+ */
+::-webkit-scrollbar {
+    width: 10px; /* for vertical scrollbars */
+    height: 1px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar:hover,
+::-webkit-scrollbar:active {
+    width: 3px; /* for vertical scrollbars */
+    height: 3px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4);
+}
