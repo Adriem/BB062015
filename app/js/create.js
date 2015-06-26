@@ -36,8 +36,9 @@ $('#create-form').submit(function (e) {
     console.log(beer);
 
     var request = $.ajax({
-        url: "http://localhost:8080/beers/api/submit",
+        url: "http://localhost:5000/api/beer",
         data: JSON.stringify(beer),
+        contentType: 'application/json',
         method: "POST"
     });
 

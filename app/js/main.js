@@ -32,12 +32,12 @@ function filterAndSetElements() {
 }
 
 var request = $.ajax({
-    url: "./data/beers.json",
+    url: "http://localhost:5000/api/beers",
     method: "GET"
 });
 
 request.done(function (msg) {
-    beerList = msg.data;
+    beerList = JSON.parse(msg).data;
     setList(beerList);
 });
 

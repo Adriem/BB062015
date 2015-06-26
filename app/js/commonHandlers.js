@@ -7,7 +7,6 @@ $('#home-handler').click(function() {
 
 $('#menu-handler').click(function() {
     $('.sidebar').toggleClass('sidebar-active',1000,"swing");
-    $('.view').toggleClass('view-not-active',1000,"swing");
 });
 
 $('#create-handler').click(function () {
