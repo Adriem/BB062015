@@ -1,36 +1,36 @@
-app.controller('CreateCtrl',function($scope,$state,BeerService){
+app.controller('CreateCtrl',function($scope,$state,BeerService,Validation){
 
     $scope.beer = {};
 
     $scope.send = function(){
 
         $scope.errors = {};
-        var keys = ["name", "details", "img", "provenance", "vol"];
 
-        function validate(value){
-            return (value == undefined || value.trim() == "");
-        }
-
+        /**
+         * Esta funcion actualiza el objeto de errores y los diversos ng-class que tenemos
+         * en la vista de create.html se actualizan para mostrar feedback
+         * @param field
+         */
         function showErrorFeedback(field){
             $scope.errors[field] = true;
         }
 
-        keys.forEach(function(key){
-            if (validate($scope.beer[key].toString())) {
-                showErrorFeedback(key);
-            }
-        });
+        /**
+         * Esta funcion trata de someter una nueva cerveza de no existir errores
+         */
+        function submitBeer(){
+            Validation.hasErrors($scope.errors).then(function(){
+                console.log($scope.beer);
 
-        if ($scope.errors.name||$scope.errors.details||$scope.errors.img||$scope.errors.provenance||$scope.errors.vol) {
-            console.log($scope.errors);
-            return;
+                BeerService.submit($scope.beer)
+                    .success(function () {
+                        console.log("Beer successfully added!");
+                        $state.go('home');
+                    });
+            }, function(){console.log("At least an error in the form was found")});
+
         }
-        console.log($scope.beer);
 
-        BeerService.submit($scope.beer)
-            .success(function () {
-                console.log("Beer successfully added!");
-                $state.go('home');
-            });
+        Validation.validate($scope.beer,showErrorFeedback).then(submitBeer);
     }
 });
