@@ -16,7 +16,7 @@ app.controller('CreateCtrl',function($scope,$state,BeerService){
         }
 
         keys.forEach(function(key){
-            if (validate($scope.beer[key])) {
+            if (validate($scope.beer[key].toString())) {
                 showErrorFeedback(key);
             }
         });
@@ -29,11 +29,8 @@ app.controller('CreateCtrl',function($scope,$state,BeerService){
 
         BeerService.submit($scope.beer)
             .success(function () {
-                alert("Beer successfully added!");
+                console.log("Beer successfully added!");
                 $state.go('home');
-            })
-            .error(function () {
-                alert("Error submitting beer");
             });
     }
 });
