@@ -10,7 +10,7 @@ class Beer(me.Document):
     img = me.StringField(required=True)
     details = me.StringField(required=True)
     provenance = me.StringField(required=True)
-    vol = me.StringField(required=True)
+    vol = me.FloatField(required=True)
 
     @staticmethod
     def parse_dir(dir):
@@ -19,7 +19,7 @@ class Beer(me.Document):
         some_beer.img = dir['img']
         some_beer.details = dir['details']
         some_beer.provenance = dir['provenance']
-        some_beer.vol = dir['vol']
+        some_beer.vol = float(dir['vol'])
         return some_beer
 
     @staticmethod
